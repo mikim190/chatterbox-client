@@ -3,13 +3,18 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function () {
-    // App.fetch() gets all 100 messages
-    // Put all 100 message into render
+    MessagesView.render();
   },
 
   render: function () {
     // render will divide the data into individual messages
     // pass each individual message into renderMessage
+    // debugger;
+    Parse.readAll(function (data) {
+      for (let i = 0; i < data.results.length; i++) {
+        MessagesView.renderMessage(data.results[i]);
+      }
+    });
   },
 
   renderMessage: function (message) {

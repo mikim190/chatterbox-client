@@ -5,11 +5,11 @@ var Parse = {
   create: function (message, successCB, errorCB = null) {
     // todo: save a message to the server
     // event.preventDefault();
+    // debugger;
     $.ajax({
       url: Parse.server,
       type: 'POST',
-      // data: JSON.stringify(message),
-      data: createMessage(message),
+      data: JSON.stringify(message),
       contentType: 'application/json',
       success: successCB,
       error: errorCB || function (error) {
@@ -30,13 +30,4 @@ var Parse = {
       }
     });
   }
-};
-
-var createMessage = function (msg) {
-  var data = {
-    username: App.username,
-    text: msg,
-    roomname: 'lobby'
-  };
-  return JSON.stringify(data);
 };
