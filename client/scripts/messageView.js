@@ -5,4 +5,4 @@ var MessageView = {
       <div class="text"><%- text %></div>
     </div>
   `),
-}
+};

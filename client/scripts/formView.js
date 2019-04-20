@@ -12,7 +12,7 @@ var FormView = {
     var messageObj = {
       username: App.username,
       text: FormView.$form.find('input[type="text"]').val(),
-      roomname: $("select option:selected").text()
+      roomname: $('select option:selected').text()
     };
 
     Parse.create(messageObj, (data) => {

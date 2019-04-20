@@ -23,7 +23,7 @@ var RoomsView = {
   },
 
   selectedRoom: function () {
-    RoomsView.currentRoom = $("select option:selected").text();
+    RoomsView.currentRoom = $('select option:selected').text();
     MessagesView.$chats.empty();
     for (var key in MessagesView.allMessage) {
       if (key === RoomsView.currentRoom) {

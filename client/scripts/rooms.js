@@ -12,4 +12,4 @@ var Rooms = {
       Rooms.addRoom(roomname);
     }
   }
-}
+};
