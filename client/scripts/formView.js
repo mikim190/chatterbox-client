@@ -12,13 +12,15 @@ var FormView = {
     var messageObj = {
       username: App.username,
       text: FormView.$form.find('input[type="text"]').val(),
-      roomname: 'lobby' // TODO
+      roomname: $("select option:selected").text()
     };
+
     Parse.create(messageObj, (data) => {
       console.log(data);
+      MessagesView.prependMessage(messageObj);
     });
 
-    MessagesView.render();
+    MessagesView.initialize();
     console.log('click!');
   },
 
