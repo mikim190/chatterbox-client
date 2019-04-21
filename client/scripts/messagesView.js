@@ -27,6 +27,12 @@ var MessagesView = {
     if (messageObj.username === undefined) {
       messageObj.username = 'anonymous';
     }
+    if (messageObj.roomname === undefined) {
+      messageObj.roomname = 'emptyRoom';
+    }
+    if (messageObj.text === undefined) {
+      messageObj.text = '';
+    }
     if (MessagesView.allMessage[messageObj.roomname] === undefined) {
       MessagesView.allMessage[messageObj.roomname] = [MessageView.render(messageObj)];
     } else {
